@@ -21,7 +21,7 @@ def get_user_input() -> int:
     """
     while True:
         user_input: str = input(
-            "Please enter a number between 0 and 15 to convert to binary: "
+            f"Please enter a number between {START_RANGE} and {END_RANGE} to convert to binary: "
         )
 
         if not user_input.isdigit():
