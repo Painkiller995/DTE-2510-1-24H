@@ -27,14 +27,16 @@ def get_user_input() -> int:
             )
             continue
 
-        if int(user_input) < 0 or int(user_input) > 15:
+        integer_value: int = int(user_input)
+
+        if integer_value < 0 or integer_value > 15:
             print(
                 "Oops! 😅 It seems you entered a number that is not between 0 and 15, please enter a valid number. "
             )
             continue
 
         print("-------------------------------------------------")
-        return int(user_input)
+        return integer_value
 
 
 user_input = get_user_input()
