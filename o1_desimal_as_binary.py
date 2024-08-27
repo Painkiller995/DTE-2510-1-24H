@@ -8,6 +8,9 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 
 """
 
+START_RANGE: int = 0
+END_RANGE: int = 15
+
 
 def get_user_input() -> int:
     """
@@ -29,9 +32,10 @@ def get_user_input() -> int:
 
         integer_value: int = int(user_input)
 
-        if integer_value < 0 or integer_value > 15:
+        if integer_value < START_RANGE or integer_value > END_RANGE:
             print(
-                "Oops! 😅 It seems you entered a number that is not between 0 and 15, please enter a valid number. "
+                "Oops! 😅 It seems you entered a number that is not between "
+                f"{START_RANGE} and {END_RANGE}, please enter a valid number. "
             )
             continue
 
