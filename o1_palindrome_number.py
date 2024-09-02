@@ -63,12 +63,33 @@ def is_palindrome_manual(input_string: str) -> bool:
     return is_palindrome
 
 
+def is_palindrome_integer(input: int) -> bool:
+    """
+    Check if the input is a palindrome without converting the integer to a string.
+
+    Args:
+        input: The integer to check.
+
+    Returns:
+        True if the input is a palindrome, False otherwise.
+    """
+    original = input
+    reversed_num = 0
+
+    while input > 0:
+        remainder = input % 10
+        reversed_num = reversed_num * 10 + remainder
+        input //= 10
+
+    return original == reversed_num
+
+
 def is_palindrome_pythonic(input_string: str) -> bool:
     """
     Check if the input is a palindrome using a pythonic way.
 
     Args:
-        user_input: The user input to check.
+        input_string: The input to check.
 
     Returns:
         True if the input is a palindrome, False otherwise.
@@ -81,6 +102,9 @@ print("Welcome to the palindrome checker! 😊")
 user_input = get_user_input()
 print(
     f"The input {user_input} in {'' if is_palindrome_manual(user_input) else 'not '}a palindrome."
+)
+print(
+    f"The input {user_input} in {'' if is_palindrome_integer(int(user_input)) else 'not '}a palindrome (integer)."
 )
 print(
     f"The input {user_input} in {'' if is_palindrome_pythonic(user_input) else 'not '}a palindrome (pythonic)."
