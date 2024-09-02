@@ -64,8 +64,10 @@ decimal_number = get_valid_integer_input("Enter a decimal number")
 
 hex_value = decimal_to_hex(decimal_number)
 
+# The following ANSI escape codes are used to change the text color in the terminal.
+# https://en.wikipedia.org/wiki/ANSI_escape_code
 print(
-    f"The hexadecimal representation of {decimal_number} is: \033[92m {hex_value} \033[0m"
+    f"The hexadecimal representation of \033[91m {decimal_number} \033[0m is: \033[92m {hex_value} \033[0m"
 )
 print("-------------------------------------------------")
 print("Thank you for using the Decimal to Hexadecimal Converter! 😊")
