@@ -3,6 +3,7 @@ This module represents a simple rock, scissor, paper game implementation.
 
 This implementation could be improved in the feature please check github for the latest version.
 https://github.com/Painkiller995/DTE-2510-1-24H
+
 """
 
 import random
