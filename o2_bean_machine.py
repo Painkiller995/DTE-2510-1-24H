@@ -55,10 +55,10 @@ for _ in range(number_of_balls):
 
     slots[position] += 1
 
-max_balls: int = max(slots)
-
 
 print("\n Here is the bean machine game result: 😊 \n")
+
+max_balls: int = max(slots)
 
 for i in range(max_balls, 0, -1):
     for j in range(number_of_slots):
