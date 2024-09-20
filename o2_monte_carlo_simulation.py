@@ -1,5 +1,5 @@
 """
-This module represents a monte carlo simulation implementation.
+This module represents a monte carlo simulation implementation of the estimation of pi.
 
 This implementation could be improved in the feature please check github for the latest version.
 https://github.com/Painkiller995/DTE-2510-1-24H
