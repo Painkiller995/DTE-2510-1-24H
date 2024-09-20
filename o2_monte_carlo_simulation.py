@@ -20,9 +20,7 @@ def get_random_point() -> tuple:
     Returns:
         A random point.
     """
-    x: float = random.uniform(-1, 1)
-    y: float = random.uniform(-1, 1)
-    return x, y
+    return random.uniform(-1, 1), random.uniform(-1, 1)
 
 
 def monte_carlo_simulation() -> float:
