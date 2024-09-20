@@ -35,7 +35,7 @@ def monte_carlo_simulation() -> float:
     for _ in range(NUMBER_OF_POINTS):
         x, y = get_random_point()
 
-        if math.sqrt(x**2 + y**2) < 1:
+        if math.sqrt(x**2 + y**2) <= 1:
             number_of_hits += 1
 
     return 4 * number_of_hits / NUMBER_OF_POINTS
