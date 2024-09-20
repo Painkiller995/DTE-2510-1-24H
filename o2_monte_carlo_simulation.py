@@ -59,4 +59,4 @@ def monte_carlo_simulation() -> float:
 
 if __name__ == "__main__":
     pi: float = monte_carlo_simulation()
-    print(pi)
+    print(f"Pi is approximately {pi}")
