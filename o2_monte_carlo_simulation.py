@@ -13,20 +13,6 @@ import random
 NUMBER_OF_POINTS: int = 1000000
 
 
-def get_pi(number_of_hits: int, number_of_points: int) -> float:
-    """
-    Get the value of pi.
-
-    Args:
-        number_of_hits: The number of hits.
-        number_of_points: The number of points.
-
-    Returns:
-        The value of pi.
-    """
-    return 4 * number_of_hits / number_of_points
-
-
 def get_random_point() -> tuple:
     """
     Get a random point.
@@ -54,7 +40,7 @@ def monte_carlo_simulation() -> float:
         if math.sqrt(x**2 + y**2) < 1:
             number_of_hits += 1
 
-    return get_pi(number_of_hits, NUMBER_OF_POINTS)
+    return 4 * number_of_hits / NUMBER_OF_POINTS
 
 
 if __name__ == "__main__":
