@@ -44,7 +44,7 @@ def find_genes(dna_sequence: str) -> str:
 
         index = start_index + 1
 
-    return ",".join(gene_list)
+    return ",".join(gene_list) if gene_list else "No genes found!"
 
 
 def is_valid_gene(gene: str) -> bool:
