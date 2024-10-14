@@ -45,13 +45,11 @@ def get_usage_info(usage_type: str) -> int:
         The total usage for the specified type.
     """
     while True:
-
         total_usage_input: str = input(
             f"Please enter your total {usage_type} usage for this month: "
         )
 
         if not total_usage_input.isdigit():
-
             print(
                 "Oops! 😅 It seems you entered an invalid input, please enter a valid number. "
             )
