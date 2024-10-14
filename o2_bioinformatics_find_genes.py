@@ -19,7 +19,7 @@ def find_genes(dna_sequence: str) -> str:
         dna_sequence: The DNA sequence.
 
     Returns:
-        The genes found in the DNA sequence.
+        The genes found in the DNA sequence. If no genes are found, return "No genes found!".
     """
     gene_list = []
 
