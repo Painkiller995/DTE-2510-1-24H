@@ -30,11 +30,21 @@ class SimpleGUI:
             f"{window_size}x{window_size}+{position_right}+{position_down}"
         )
 
-        self._button = ttk.Button(
-            self._root, text="Click me!", command=self.process_button_click
-        )
+        self.frame1 = ttk.Frame(self._root, padding=10)
+        self.frame2 = ttk.Frame(self._root, padding=10)
 
-        self._button.pack(expand=True)
+        self.frame1.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
+        self.frame2.pack(side=tkinter.RIGHT, fill=tkinter.BOTH, expand=True)
+
+        self.button1 = ttk.Button(
+            self.frame1, text="Frame 1 Button", command=self.process_button1_click
+        )
+        self.button1.pack(pady=20)
+
+        self.button2 = ttk.Button(
+            self.frame2, text="Frame 2 Button", command=self.process_button2_click
+        )
+        self.button2.pack(pady=20)
 
     def run(self):
         """Run the GUI."""
@@ -43,6 +53,14 @@ class SimpleGUI:
     def process_button_click(self):
         """Process button click."""
         print("Button clicked!")
+
+    def process_button1_click(self):
+        """Process button 1 click."""
+        print("Button 1 clicked!")
+
+    def process_button2_click(self):
+        """Process button 2 click."""
+        print("Button 2 clicked!")
 
 
 if __name__ == "__main__":
