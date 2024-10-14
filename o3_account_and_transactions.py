@@ -83,3 +83,19 @@ class Account:
             f"Balance: {self._balance:.2f}, "
             f"Interest Rate: {self._interest:.2f}%"
         )
+
+
+if __name__ == "__main__":
+    # Create an account
+    account = Account(1, 1000, 50000.0, 7)
+    print("Account created: \n", account)
+
+    # Deposit money
+    account.deposit(500.0)
+    print(f"New balance after depositing 500 is {account.balance}")
+
+    # Withdraw money
+    if account.withdraw(1000.0):
+        print(f"New balance after withdrawal of 1000 is {account.balance}")
+    else:
+        print("Withdrawal failed.")
