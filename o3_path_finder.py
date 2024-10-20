@@ -123,8 +123,15 @@ def print_grid(grid: list[list[int]]) -> None:
     Args:
         grid: The grid to print
     """
-    for row in grid:
-        print(" ".join(f"{value:3}" for value in row))
+
+    size = len(grid)
+
+    column_headers = "    " + " ".join(f"{i:3}" for i in range(size))
+    print(column_headers)
+
+    for idx, row in enumerate(grid):
+        row_string = " ".join(f"{value:3}" for value in row)
+        print(f"{idx:3} {row_string}")
 
 
 if __name__ == "__main__":
