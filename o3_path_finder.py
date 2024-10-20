@@ -117,18 +117,29 @@ def find_path(
     return result_path
 
 
-if __name__ == "__main__":
-    grid, target_position = populate_grid_with_distances(GRID_SIZE, TARGET_VALUE)
-
+def print_grid(grid: list[list[int]]) -> None:
+    """
+    Prints the grid in a human-readable format.
+    Args:
+        grid: The grid to print
+    """
     for row in grid:
         print(" ".join(f"{value:3}" for value in row))
 
-    start_x, start_y = get_random_position(GRID_SIZE)
 
-    print(f"Start position: ({start_x}, {start_y})")
-    print(f"Target position: {target_position}")
+if __name__ == "__main__":
+    grid, target_position = populate_grid_with_distances(GRID_SIZE, TARGET_VALUE)
+
+    start_x, start_y = get_random_position(GRID_SIZE)
 
     path = find_path(grid, (start_x, start_y), target_position)
 
+    print_grid(grid)
+
+    print(f"Start position: ({start_x}, {start_y})")
+
+    print(f"Target position: {target_position}")
+
     print(f"Path: {path}")
+
     print(f"Path length: {len(path)}")
