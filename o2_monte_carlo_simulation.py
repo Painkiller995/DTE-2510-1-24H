@@ -9,7 +9,6 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 import math
 import random
 
-
 NUMBER_OF_POINTS: int = 1000000
 
 
