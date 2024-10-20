@@ -32,10 +32,10 @@ def get_random_position(size: int) -> tuple[int, int]:
     Randomly selects a position within the grid boundaries.
 
     Args:
-        size (int): The size of the grid.
+        size: The size of the grid.
 
     Returns:
-        tuple[int, int]: The coordinates of the randomly selected target position.
+        The coordinates of the randomly selected target position.
     """
     return random.randint(0, size - 1), random.randint(0, size - 1)
 
@@ -48,13 +48,12 @@ def populate_grid_with_distances(
     from a randomly selected target position, and returns the grid along with the target's coordinates.
 
     Args:
-        size (int): The size of the grid (size x size).
-        target_value (int): The value assigned to the target position (highest value in the grid).
+        size: The size of the grid (size x size).
+        target_value: The value assigned to the target position (highest value in the grid).
 
     Returns:
-        tuple[list[list[int]], tuple[int, int]]:
-            A 2D grid of integers where each value decreases with distance from the target,
-            and the coordinates of the target position.
+        A 2D grid of integers where each value decreases with distance from the target,
+        and the coordinates of the target position.
     """
 
     grid = initialize_grid(size)
@@ -71,10 +70,65 @@ def populate_grid_with_distances(
     return grid, (target_x, target_y)
 
 
+def find_path(
+    grid: list[list[int]],
+    start_position: tuple[int, int],
+    target_position: tuple[int, int],
+) -> list[tuple[int, int]]:
+    """
+    Finds a path from the start position to the target position in the grid.
+
+    Args:
+        grid: The grid of values.
+        start_position: The starting position.
+        target_position: The target position.
+    Returns:
+        A list of positions representing the path from start to target.
+    """
+
+    current_position = start_position
+
+    result_path = []
+
+    while current_position != target_position:
+        x, y = current_position
+
+        neighbors = []
+
+        # Check left
+        if x > 0:
+            neighbors.append((x - 1, y))
+        # Check right
+        if x < len(grid) - 1:
+            neighbors.append((x + 1, y))
+        # Check up
+        if y > 0:
+            neighbors.append((x, y - 1))
+        # Check down
+        if y < len(grid) - 1:
+            neighbors.append((x, y + 1))
+
+        next_position = max(neighbors, key=lambda pos: grid[pos[0]][pos[1]])
+
+        current_position = next_position
+
+        result_path.append(current_position)
+
+    return result_path
+
+
 if __name__ == "__main__":
     grid, target_position = populate_grid_with_distances(GRID_SIZE, TARGET_VALUE)
 
     for row in grid:
-        for cell in row:
-            print(f"\033[92m{cell}\033[0m" if cell == TARGET_VALUE else cell, end=" ")
-        print()
+        print(" ".join(f"{value:3}" for value in row))
+
+    start_x, start_y = get_random_position(GRID_SIZE)
+
+    print(f"Start position: ({start_x}, {start_y})")
+    print(f"Target position: {target_position}")
+
+    path = find_path(grid, (start_x, start_y), target_position)
+
+    print(f"Path: {path}")
+    print(f"Path length: {len(path)}")
