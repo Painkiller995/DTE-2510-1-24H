@@ -163,9 +163,15 @@ if __name__ == "__main__":
     rect1 = Rectangle2D(center_x=0, center_y=0, width=10, height=5)
     rect2 = Rectangle2D(center_x=5, center_y=0, width=5, height=5)
 
+    print(f"rect1 center: {rect1.center}")  # Expected: (0, 0)
+    print(f"rect1 width: {rect1.width}")  # Expected: 10
+    print(f"rect1 height: {rect1.height}")  # Expected: 5
     print(f"rect1 area: {rect1.get_area()}")  # Expected: 50
     print(f"rect1 perimeter: {rect1.get_perimeter()}")  # Expected: 30
 
+    print(f"rect2 center: {rect2.center}")  # Expected: (5, 0)
+    print(f"rect2 width: {rect2.width}")  # Expected: 5
+    print(f"rect2 height: {rect2.height}")  # Expected: 5
     print(f"rect2 area: {rect2.get_area()}")  # Expected: 25
     print(f"rect2 perimeter: {rect2.get_perimeter()}")  # Expected: 20
 
