@@ -49,14 +49,29 @@ class EQ:
 
     def is_solved(self) -> bool:
         """
-        Check if all queens are placed correctly.
+        Check if all queens are placed correctly on the board.
+        No two queens should be able to attack each other.
         """
-        for i in range(8):
-            for j in range(i + 1, 8):
-                if self.queens[i] == self.queens[j] or abs(
-                    self.queens[i] - self.queens[j]
-                ) == abs(i - j):
+
+        for row_index in range(8):
+            for next_row_index in range(row_index + 1, 8):
+                if self.queens[row_index] == self.queens[next_row_index]:
+                    print(
+                        f"Queens are in the same column: {row_index} and {next_row_index}"
+                    )
                     return False
+
+                column_difference = abs(
+                    self.queens[row_index] - self.queens[next_row_index]
+                )
+                row_difference = abs(row_index - next_row_index)
+
+                if column_difference == row_difference:
+                    print(
+                        f"Queens are on the same diagonal: {row_index} and {next_row_index}"
+                    )
+                    return False
+
         return True
 
 
