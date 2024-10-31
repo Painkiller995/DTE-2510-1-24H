@@ -14,24 +14,33 @@ import tkinter as tk
 from o4_calculator import Calculator
 
 
-class CalculatorGUI:
+class CalculatorGUI(tk.Frame):
     """
     Represents a simple calculator GUI.
     """
 
-    def __init__(self, root: tk.Tk):
-        self.root = root
-        self.root.title("Calculator GUI")
+    def __init__(self):
+        self.root = tk.Tk()
+        super().__init__(self.root)
 
-        width, height = 300, 400
-        x = (self.root.winfo_screenwidth() - width) // 2
-        y = (self.root.winfo_screenheight() - height) // 2
-        self.root.geometry(f"{width}x{height}+{x}+{y}")
+        self.root.title("Calculator GUI")
+        self.set_geometry()
 
         self.calculator = Calculator()
 
+    def set_geometry(self, width=300, height=400) -> None:
+        """
+        Sets the window size and positions it in the center of the screen.
+
+        Args:
+            width: The width of the window.
+            height: The height of the window.
+        """
+        position_x = (self.root.winfo_screenwidth() // 2) - (width // 2)
+        position_y = (self.root.winfo_screenheight() // 2) - (height // 2)
+        self.root.geometry(f"{width}x{height}+{position_x}+{position_y}")
+
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = CalculatorGUI(root)
-    root.mainloop()
+    app = CalculatorGUI()
+    app.mainloop()
