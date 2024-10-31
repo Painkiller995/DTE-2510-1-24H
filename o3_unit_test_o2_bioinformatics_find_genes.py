@@ -10,6 +10,7 @@ https://github.com/Painkiller995/DTE-2510-1-24H/blob/main/o2_bioinformatics_find
 """
 
 import unittest
+
 from o2_bioinformatics_find_genes import find_genes
 
 
