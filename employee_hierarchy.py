@@ -6,12 +6,13 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 
 """
 
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Employee:
+class Employee(ABC):
     """
-    This class represents an employee.
+    This class represents an employee in a company.
+    It is an abstract class that cannot be instantiated directly.
     """
 
     def __init__(self, name: str, emp_id: int):
