@@ -102,7 +102,7 @@ class SalaryEmployee(Employee):
         """
         return self._monthly_salary
 
-    def calculate_payroll(self):
+    def calculate_payroll(self) -> float:
         """
         Calculate the payroll for the employee.
 
@@ -175,7 +175,7 @@ class CommissionEmployee(Employee):
         self._commission = commission
 
     @property
-    def base_salary(self):
+    def base_salary(self) -> float:
         """
         The base salary of the employee.
 
@@ -185,7 +185,7 @@ class CommissionEmployee(Employee):
         return self._base_salary
 
     @property
-    def commission(self):
+    def commission(self) -> float:
         """
         The commission of the employee.
 
@@ -194,7 +194,7 @@ class CommissionEmployee(Employee):
         """
         return self._commission
 
-    def calculate_payroll(self):
+    def calculate_payroll(self) -> float:
         """
         Calculate the payroll for the employee.
 
