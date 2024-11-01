@@ -7,6 +7,7 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 """
 
 import tkinter as tk
+import math
 
 
 class Circle:
@@ -139,6 +140,26 @@ class CircleDragApp(tk.Frame):
         self.canvas.delete("all")
         self.circle1.paint(self.canvas)
         self.circle2.paint(self.canvas)
+        self.draw_line()
+
+    def draw_line(self) -> None:
+        """
+        Draw the line between the circles and the distance between them.
+        """
+
+        self.canvas.create_line(
+            self.circle1.x, self.circle1.y, self.circle2.x, self.circle2.y
+        )
+
+        distance = math.sqrt(
+            (self.circle2.x - self.circle1.x) ** 2
+            + (self.circle2.y - self.circle1.y) ** 2
+        )
+
+        mid_x = (self.circle1.x + self.circle2.x) / 2
+        mid_y = (self.circle1.y + self.circle2.y) / 2
+
+        self.canvas.create_text(mid_x, mid_y, text=f"{distance:.2f}")
 
 
 if __name__ == "__main__":
