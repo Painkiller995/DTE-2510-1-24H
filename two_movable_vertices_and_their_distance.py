@@ -6,8 +6,8 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 
 """
 
-import tkinter as tk
 import math
+import tkinter as tk
 
 
 class Circle:
@@ -67,6 +67,7 @@ class CircleDragApp(tk.Frame):
             width=self.root.winfo_screenwidth(),
             height=self.root.winfo_screenheight(),
         )
+
         self.canvas.pack()
 
         self.canvas.bind("<B1-Motion>", self.mouse_moved)
@@ -87,6 +88,9 @@ class CircleDragApp(tk.Frame):
         position_x = (self.root.winfo_screenwidth() // 2) - (width // 2)
         position_y = (self.root.winfo_screenheight() // 2) - (height // 2)
         self.root.geometry(f"{width}x{height}+{position_x}+{position_y}")
+
+        # Prevent resizing the window as required by the task.
+        self.root.resizable(False, False)
 
     def initialize_circles(self) -> None:
         """
