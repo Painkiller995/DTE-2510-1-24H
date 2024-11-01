@@ -35,7 +35,7 @@ class Calculator:
             The result of the operation.
         """
         if operator not in ["*", "/", "+", "-"]:
-            raise ValueError("Invalid operator provided")
+            raise ValueError("Invalid operator provided, please use one of: *, /, +, -")
 
         if operand1 is None or operand2 is None:
             raise ValueError("Operands cannot be None")
