@@ -46,7 +46,7 @@ class Circle:
             self.x + self.radius,
             self.y + self.radius,
             outline="black",
-            fill="blue",
+            fill="red",
         )
 
 
