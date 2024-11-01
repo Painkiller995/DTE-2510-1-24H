@@ -62,7 +62,11 @@ class CircleDragApp(tk.Frame):
         self.root.title("Two Circles")
         self.set_window_shape()
 
-        self.canvas = tk.Canvas(self.root, width=400, height=400)
+        self.canvas = tk.Canvas(
+            self.root,
+            width=self.root.winfo_screenwidth(),
+            height=self.root.winfo_screenheight(),
+        )
         self.canvas.pack()
 
         self.canvas.bind("<B1-Motion>", self.mouse_moved)
@@ -83,7 +87,6 @@ class CircleDragApp(tk.Frame):
         position_x = (self.root.winfo_screenwidth() // 2) - (width // 2)
         position_y = (self.root.winfo_screenheight() // 2) - (height // 2)
         self.root.geometry(f"{width}x{height}+{position_x}+{position_y}")
-        self.root.resizable(False, False)
 
     def initialize_circles(self) -> None:
         """
@@ -121,9 +124,9 @@ class CircleDragApp(tk.Frame):
         min_dist = (circle.radius + other_circle.radius) ** 2
         return (
             x - circle.radius >= 0
-            and x + circle.radius <= 400
+            and x + circle.radius <= self.canvas.winfo_width()
             and y - circle.radius >= 0
-            and y + circle.radius <= 400
+            and y + circle.radius <= self.canvas.winfo_height()
             and dist >= min_dist
         )
 
