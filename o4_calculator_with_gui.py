@@ -122,8 +122,11 @@ class CalculatorGUI(tk.Frame):
         self.result_label = tk.Label(output_frame, text="")
         self.result_label.grid(column=1, row=0, pady=3, padx=3)
 
+        log_label = tk.Label(output_frame, text="Log:")
+        log_label.grid(column=0, row=1, pady=3, padx=3, sticky="w")
+
         self.logs = tk.Text(output_frame, height=10, width=30)
-        self.logs.grid(column=0, row=1, columnspan=2, pady=3, padx=3)
+        self.logs.grid(column=0, row=2, columnspan=2, pady=3, padx=3)
         self.logs.config(state=tk.DISABLED)
 
     def create_valid_entry(self, parent: tk.Widget, validator: Callable) -> tk.Entry:
