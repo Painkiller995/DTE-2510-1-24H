@@ -76,7 +76,7 @@ class CircleDragApp(tk.Frame):
 
         self.current_circle = None
 
-    def set_window_shape(self, width=400, height=400) -> None:
+    def set_window_shape(self, width: int = 400, height: int = 400) -> None:
         """
         Sets the window size and positions it in the center of the screen.
 
