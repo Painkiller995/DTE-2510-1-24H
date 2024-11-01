@@ -68,6 +68,7 @@ class CircleDragApp(tk.Frame):
         self.canvas.bind("<B1-Motion>", self.mouse_moved)
 
         self.initialize_circles()
+        self.draw_line()
 
         self.current_circle = None
 
