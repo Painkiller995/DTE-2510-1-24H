@@ -13,7 +13,7 @@ https://github.com/Painkiller995/DTE-2510-1-24H
 
 import tkinter as tk
 from tkinter import messagebox
-from typing import Callable, Literal
+from typing import Callable
 
 from o4_calculator import Calculator
 
