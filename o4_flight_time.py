@@ -81,7 +81,7 @@ class Flight:
 
 class Itinerary:
     """
-    A class representing an itinerary.
+    A class representing an itinerary of flights.
     """
 
     def __init__(self, flights: list[Flight]):
