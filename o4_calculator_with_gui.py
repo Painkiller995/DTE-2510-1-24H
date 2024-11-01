@@ -3,7 +3,8 @@ This module represents a gui calculator implementation.
 
 Dependencies:
     - tkinter
-    o4_calculator.py available in the same repository on github.
+    o4_calculator.py available at:
+    https://github.com/Painkiller995/DTE-2510-1-24H/blob/main/o4_calculator.py
 
 This implementation could be improved in the feature please check github for the latest version.
 https://github.com/Painkiller995/DTE-2510-1-24H
